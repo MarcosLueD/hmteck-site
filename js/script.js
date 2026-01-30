@@ -23,7 +23,7 @@ document.getElementById('form-solicitacao').addEventListener('submit', function(
     }
     
     // Monta a mensagem para o WhatsApp
-    let mensagem = `Olá! Nova solicitação de orçamento pelo site HM TECH\n\n`;
+    let mensagem = `Olá! Nova solicitação de orçamento pelo site HMTECH\n\n`;
     mensagem += `Nome: ${nome}\n`;
     mensagem += `WhatsApp: ${whatsapp}\n`;
     mensagem += `Marca: ${marca}\n`;
