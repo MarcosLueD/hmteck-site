@@ -261,7 +261,7 @@ button, a.btn {
     }
 
     /*CABEÇALHO*/
-  .whatsapp-btn, .btn-primary{
+  .whatsapp-btn,  .btn-inicial{
     display: none;
   }
 }
