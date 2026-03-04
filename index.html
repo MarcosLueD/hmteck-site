@@ -5,54 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HM TECH - Assistência Técnica de Celulares e Notebooks</title>
   <meta name="description" content="Assistência técnica especializada em iPhone, Samsung, Xiaomi, Motorola, notebooks e consoles em Piacatu e região. Orçamento grátis via WhatsApp!">
-  
-  <!-- Fontes e ícones -->
+  <meta property="og:title" content="HM TECH - Assistência Técnica">
+  <meta property="og:description" content="Seu celular quebrou? A gente resolve! Orçamento grátis.">
+  <meta property="og:type" content="website">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
-  <!-- CSS separado -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container">
-    <div class="header">
-  <div class="container">
-    <a href="#" class="logo">HM<span>TECH</span></a>
-    <nav></nav>
+  <!-- ===== LOADER ===== -->
+  <div id="loader">
+    <div class="loader-ring"></div>
   </div>
-</div>
-      <nav>
+
+  <!-- ===== BOTÃO WHATSAPP FLUTUANTE ===== -->
+  <a href="https://wa.me/5518996241953?text=Olá! Gostaria de um orçamento"
+     class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-float-tooltip">Falar no WhatsApp</span>
+  </a>
+
+  <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+  <button id="btn-topo" aria-label="Voltar ao topo">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="container">
+      <a href="#home" class="logo">HM<span>TECH</span></a>
+
+      <nav id="nav">
         <ul>
-          <li><a href="#home">Início</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#solicitacao">Solicitar Orçamento</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="#home" class="nav-link">Início</a></li>
+          <li><a href="#servicos" class="nav-link">Serviços</a></li>
+          <li><a href="#solicitacao" class="nav-link">Orçamento</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
         </ul>
       </nav>
-      <a href="https://wa.me/5518996241953?text=Olá! Gostaria de um orçamento" class="whatsapp-btn" target="_blank">
+
+      <a href="https://wa.me/5518996241953?text=Olá! Gostaria de um orçamento"
+         class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i> Orçamento Grátis
       </a>
+
+      <!-- Hambúrguer -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Overlay do menu mobile -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <!-- ===== HERO ===== -->
   <section class="hero" id="home">
-    <div class="container">
-      <a href="#" class="logo">
-  <div class="logo-globo-container">
-    <img src="images/globo-hmtech.png.png" alt="Globo HM TECH" class="globo-rotativo">
-  </div>
-  HM <span>TECH</span>
-</a>
-      <p>📱 Seu celular quebrou? nós resolvemos!<br>
-      ⚡ Atendimento ágil com peças de qualidade<br>
-      👇🏼 Chame agora ou solicite orçamento online!</p>
+    <div class="container hero-content">
+      <div class="globo-wrapper">
+        <img src="images/globo-hmtech.png" alt="Globo HM TECH" class="globo-rotativo">
+      </div>
+      <h1>HM <span>TECH</span></h1>
+      <p>
+        📱 Seu celular quebrou? Nós resolvemos!<br>
+        ⚡ Atendimento ágil com peças de qualidade<br>
+        👇🏼 Chame agora ou solicite orçamento online!
+      </p>
       <div class="cta-buttons">
-        <a href="https://wa.me/5518996241953" class="btn btn-primary btn-inicial" target="_blank">
+        <a href="https://wa.me/5518996241953" class="btn btn-primary" target="_blank">
           <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
         </a>
         <a href="#solicitacao" class="btn btn-outline">Solicitar Orçamento Online</a>
@@ -60,29 +83,27 @@
     </div>
   </section>
 
-  <!-- Serviços -->
+  <!-- ===== SERVIÇOS ===== -->
   <section class="services" id="servicos">
     <div class="container">
-      <h2 class="section-title">Nossos Serviços</h2>
+      <h2 class="section-title fade-in">Nossos Serviços</h2>
       <div class="cards">
-        <div class="card">
+        <div class="card fade-in">
           <i class="fas fa-mobile-alt"></i>
           <h3>Troca de Tela</h3>
           <p>iPhone, Samsung, Xiaomi, Motorola – tela original com garantia</p>
         </div>
-        <div class="card">
+        <div class="card fade-in">
           <i class="fas fa-battery-full"></i>
           <h3>Troca de Bateria</h3>
           <p>Bateria nova original em 30 minutos</p>
         </div>
-        <div class="card">
+        <div class="card fade-in">
           <i class="fas fa-microchip"></i>
           <h3>Conserto de Placa</h3>
           <p>Especialista em placa-mãe, curto, não liga, superaquecimento</p>
         </div>
-        
-        
-        <div class="card">
+        <div class="card fade-in">
           <i class="fas fa-tools"></i>
           <h3>Outros Serviços</h3>
           <p>Botão, câmera, alto-falante, entrada de carregamento, recuperação de dados</p>
@@ -91,32 +112,31 @@
     </div>
   </section>
 
-  <!-- Solicitação de Orçamento -->
-  <section id="solicitacao" class="services" style="padding: 100px 0; background: var(--dark);">
+  <!-- ===== SOLICITAÇÃO DE ORÇAMENTO ===== -->
+  <section id="solicitacao" class="form-section">
     <div class="container">
-      <h2 class="section-title">Solicite seu Orçamento Agora</h2>
-      <p style="text-align: center; max-width: 700px; margin: 0 auto 40px; font-size: 1.2rem;">
+      <h2 class="section-title fade-in">Solicite seu Orçamento Agora</h2>
+      <p class="section-subtitle fade-in">
         Preencha em menos de 1 minuto e o técnico já recebe sua comanda. Ele te responde rapidinho!
       </p>
 
-      <form id="form-solicitacao" style="max-width: 600px; margin: 0 auto; background: var(--gray); padding: 40px; border-radius: 20px; border: 1px solid #333;">
-        
-        <!-- Nome -->
-        <div style="margin-bottom: 20px;">
-          <label for="nome" style="display: block; margin-bottom: 8px; font-weight: 500;">Seu nome completo *</label>
-          <input type="text" id="nome" required placeholder="Ex: João Silva" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #444; background: #222; color: white; font-size: 1rem;">
+      <form id="form-solicitacao" class="form-card fade-in" novalidate>
+
+        <div class="form-group">
+          <label for="nome">Seu nome completo *</label>
+          <input type="text" id="nome" required placeholder="Ex: João Silva" autocomplete="name">
+          <span class="form-error" id="erro-nome"></span>
         </div>
 
-        <!-- WhatsApp -->
-        <div style="margin-bottom: 20px;">
-          <label for="whatsapp" style="display: block; margin-bottom: 8px; font-weight: 500;">Seu WhatsApp (com DDD) *</label>
-          <input type="tel" id="whatsapp" required placeholder="Ex: 18996241953" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #444; background: #222; color: white; font-size: 1rem;">
+        <div class="form-group">
+          <label for="whatsapp">Seu WhatsApp (com DDD) *</label>
+          <input type="tel" id="whatsapp" required placeholder="(18) 99999-9999" autocomplete="tel">
+          <span class="form-error" id="erro-whatsapp"></span>
         </div>
 
-        <!-- Marca -->
-        <div style="margin-bottom: 20px;">
-          <label for="marca" style="display: block; margin-bottom: 8px; font-weight: 500;">Marca do aparelho *</label>
-          <select id="marca" required style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #444; background: #222; color: white; font-size: 1rem;">
+        <div class="form-group">
+          <label for="marca">Marca do aparelho *</label>
+          <select id="marca" required>
             <option value="">Selecione...</option>
             <option value="iPhone">iPhone</option>
             <option value="Samsung">Samsung</option>
@@ -124,18 +144,17 @@
             <option value="Motorola">Motorola</option>
             <option value="Outro">Outro</option>
           </select>
+          <span class="form-error" id="erro-marca"></span>
         </div>
 
-        <!-- Modelo -->
-        <div style="margin-bottom: 20px;">
-          <label for="modelo" style="display: block; margin-bottom: 8px; font-weight: 500;">Modelo exato (opcional, mas ajuda muito)</label>
-          <input type="text" id="modelo" placeholder="Ex: iPhone 13 Pro, Galaxy A54, Moto G84..." style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #444; background: #222; color: white; font-size: 1rem;">
+        <div class="form-group">
+          <label for="modelo">Modelo exato <small>(opcional, mas ajuda muito)</small></label>
+          <input type="text" id="modelo" placeholder="Ex: iPhone 13 Pro, Galaxy A54, Moto G84...">
         </div>
 
-        <!-- Problema principal -->
-        <div style="margin-bottom: 20px;">
-          <label for="problema" style="display: block; margin-bottom: 8px; font-weight: 500;">Qual o problema principal? *</label>
-          <select id="problema" required style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #444; background: #222; color: white; font-size: 1rem;">
+        <div class="form-group">
+          <label for="problema">Qual o problema principal? *</label>
+          <select id="problema" required>
             <option value="">Selecione...</option>
             <option value="Tela quebrada / trincada">Tela quebrada / trincada</option>
             <option value="Não liga / sem sinal">Não liga / sem sinal</option>
@@ -145,123 +164,155 @@
             <option value="Carregador não reconhece">Carregador não reconhece / entrada danificada</option>
             <option value="Outro">Outro (descreva abaixo)</option>
           </select>
+          <span class="form-error" id="erro-problema"></span>
         </div>
 
-        <!-- Descrição extra -->
-        <div style="margin-bottom: 20px;">
-          <label for="descricao" style="display: block; margin-bottom: 8px; font-weight: 500;">Descreva mais detalhes (opcional)</label>
-          <textarea id="descricao" rows="4" placeholder="Ex: caiu de 1 metro, ficou preto, só liga na tomada..." style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #444; background: #222; color: white; font-size: 1rem; resize: vertical;"></textarea>
+        <div class="form-group">
+          <label for="descricao">Descreva mais detalhes <small>(opcional)</small></label>
+          <textarea id="descricao" rows="4"
+            placeholder="Ex: caiu de 1 metro, ficou preto, só liga na tomada..."></textarea>
         </div>
 
-        <!-- Acessórios -->
-        <div style="margin-bottom: 30px;">
-          <label style="display: block; margin-bottom: 8px; font-weight: 500;">Acessórios que acompanham o aparelho:</label>
-          <label style="margin-right: 15px;"><input type="checkbox" id="acessorio-capa"> Capa</label>
-          <label style="margin-right: 15px;"><input type="checkbox" id="acessorio-pelicula"> Película</label>
-          <label style="margin-right: 15px;"><input type="checkbox" id="acessorio-carregador"> Carregador / cabo</label>
-          <label><input type="checkbox" id="acessorio-caixa"> Caixa original</label>
+        <div class="form-group">
+          <label>Acessórios que acompanham o aparelho:</label>
+          <div class="checkboxes">
+            <label class="check-item">
+              <input type="checkbox" id="acessorio-capa"> <span>Capa</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" id="acessorio-pelicula"> <span>Película</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" id="acessorio-carregador"> <span>Carregador / cabo</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" id="acessorio-caixa"> <span>Caixa original</span>
+            </label>
+          </div>
         </div>
 
-        <!-- Botão enviar -->
-        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px; font-size: 1.3rem; border: none; cursor: pointer;">
-          <i class="fab fa-whatsapp"></i> Enviar Solicitação
+        <button type="submit" class="btn btn-primary btn-submit">
+          <span class="btn-text"><i class="fab fa-whatsapp"></i> Enviar Solicitação</span>
+          <span class="btn-loading" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Enviando...</span>
         </button>
       </form>
 
-      <!-- Mensagem de sucesso -->
-      <div id="sucesso" style="display: none; text-align: center; margin-top: 40px; padding: 30px; background: rgba(0,212,255,0.1); border-radius: 20px; border: 2px solid var(--primary);">
-        <h3 style="color: var(--primary); margin-bottom: 15px;">Solicitação enviada com sucesso! 🚀</h3>
+      <!-- Sucesso -->
+      <div id="sucesso" class="sucesso-box" style="display:none;">
+        <div class="sucesso-icon"><i class="fas fa-check-circle"></i></div>
+        <h3>Solicitação enviada com sucesso! 🚀</h3>
         <p>O técnico já recebeu sua comanda e vai te chamar em breve pelo WhatsApp.</p>
-        <p style="margin: 20px 0; font-size: 1.2rem;">
+        <p class="sucesso-phone">
           Se demorar, pode chamar direto:<br>
-          <strong><a href="https://wa.me/5518996241953" style="color: var(--primary);">18 99624-1953</a></strong>
+          <a href="https://wa.me/5518996241953">
+            <i class="fab fa-whatsapp"></i> (18) 99624-1953
+          </a>
         </p>
+        <button class="btn btn-outline btn-nova-sol" id="btn-nova-solicitacao">
+          Fazer outra solicitação
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- Sobre -->
+  <!-- ===== SOBRE ===== -->
   <section class="about" id="sobre">
     <div class="container about-content">
-      <div>
-        <h2>Por que escolher a HM TECH?</h2>
-        <ul style="margin-top: 20px; font-size: 1.1rem; line-height: 2;">
-          <li>Experiência no mercado</li>
-          <li>Técnico certificado</li>
-          <li>Peças 100% originais</li>
-          <li>Garantia de até 6 meses</li>
-          <li>Orçamentos sem compromisso</li>
-          <li>Atendimento rápido via WhatsApp</li>
-          <li>Preço justo e parcelamento no cartão</li>
+      <div class="about-text fade-in">
+        <h2>Por que escolher a <span>HM TECH</span>?</h2>
+        <ul class="about-list">
+          <li><i class="fas fa-check-circle"></i> Experiência comprovada no mercado</li>
+          <li><i class="fas fa-check-circle"></i> Técnico certificado</li>
+          <li><i class="fas fa-check-circle"></i> Peças 100% originais</li>
+          <li><i class="fas fa-check-circle"></i> Garantia de até 6 meses</li>
+          <li><i class="fas fa-check-circle"></i> Orçamentos sem compromisso</li>
+          <li><i class="fas fa-check-circle"></i> Atendimento rápido via WhatsApp</li>
+          <li><i class="fas fa-check-circle"></i> Preço justo e parcelamento no cartão</li>
         </ul>
       </div>
-      <img src="images/tecnico-hmteck.jpg" alt="Técnico HM TECH" style="border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+      <div class="about-img fade-in">
+        <img src="images/tecnico-hmteck.jpg" alt="Técnico HM TECH realizando reparo">
+      </div>
     </div>
   </section>
 
-  <!--  JavaScript separado -->
+  <!-- ===== CONTATO ===== -->
+  <section class="contact" id="contato">
+    <div class="container">
+      <h2 class="section-title fade-in">Entre em Contato</h2>
+      <div class="contact-grid fade-in">
+        <a href="https://wa.me/5518996241953" class="contact-card" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+          <h4>WhatsApp</h4>
+          <p>(18) 99624-1953</p>
+        </a>
+        <a href="https://instagram.com/hm.tech_piacatu" class="contact-card" target="_blank">
+          <i class="fab fa-instagram"></i>
+          <h4>Instagram</h4>
+          <p>@hm.tech_piacatu</p>
+        </a>
+        <div class="contact-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <h4>Localização</h4>
+          <p>Piacatu e Região</p>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-clock"></i>
+          <h4>Horário</h4>
+          <p>Seg–Sáb: 8h às 18h</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-newsletter">
+        <h3>Receba nossas novidades e promoções</h3>
+        <p>Dicas de manutenção, promoções e novidades direto no seu email!</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="Digite seu email" required>
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>SOBRE A HM TECH</h4>
+          <ul>
+            <li><a href="#sobre">Quem Somos</a></li>
+            <li><a href="#sobre">Garantia e Peças</a></li>
+            <li><a href="#solicitacao">Solicitar Orçamento</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>SERVIÇOS</h4>
+          <ul>
+            <li><a href="#servicos">Troca de Tela</a></li>
+            <li><a href="#servicos">Troca de Bateria</a></li>
+            <li><a href="#servicos">Conserto de Placa</a></li>
+            <li><a href="#servicos">Notebooks e Consoles</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CONTATO</h4>
+          <ul>
+            <li><i class="fab fa-whatsapp"></i> (18) 99624-1953</li>
+            <li><a href="https://wa.me/5518996241953">Chamar no WhatsApp</a></li>
+            <li><a href="https://instagram.com/hm.tech_piacatu">
+              <i class="fab fa-instagram"></i> Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Copyright © 2026 HM TECH - Assistência Técnica. Todos os direitos reservados.</p>
+        <p>Piacatu e região | Atendimento rápido e com garantia</p>
+      </div>
+    </div>
+  </footer>
+
   <script src="js/script.js"></script>
-
-  <footer style="background: #000; padding: 60px 0 30px; color: #ccc; font-size: 0.95rem;">
-  <div class="container">
-    <!-- Newsletter no topo -->
-    <div style="text-align: center; margin-bottom: 50px;">
-      <h3 style="color: var(--primary); margin-bottom: 15px;">Receba nossas novidades e promoções</h3>
-      <p style="margin-bottom: 20px;">Dicas de manutenção, promoções e novidades da HM TECH direto no seu email!</p>
-      
-      <form action="#" method="post" style="max-width: 500px; margin: 0 auto; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-        <input type="email" placeholder="Digite seu email" required 
-               style="flex: 1; min-width: 220px; padding: 14px; border-radius: 50px; border: 1px solid #444; background: #222; color: white; font-size: 1rem;">
-        <button type="submit" class="btn btn-primary" 
-                style="padding: 14px 30px; border-radius: 50px; font-weight: 600;">
-          Cadastrar
-        </button>
-      </form>
-    </div>
-
-    <!-- Colunas de links -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; text-align: center; margin-bottom: 40px;">
-      
-      <!-- Coluna 1: Sobre a HM TECH -->
-      <div>
-        <h4 style="color: var(--primary); margin-bottom: 20px; font-size: 1.2rem;">SOBRE A HM TECH</h4>
-        <ul style="list-style: none; padding: 0;">
-          <li><a href="#sobre" style="color: #ccc; text-decoration: none; display: block; margin-bottom: 10px;">Quem Somos</a></li>
-          <li><a href="#" style="color: #ccc; text-decoration: none; display: block; margin-bottom: 10px;">Nossa Equipe</a></li>
-          <li><a href="#" style="color: #ccc; text-decoration: none; display: block; margin-bottom: 10px;">Garantia e Peças</a></li>
-          <li><a href="#" style="color: #ccc; text-decoration: none; display: block; margin-bottom: 10px;">Depoimentos</a></li>
-        </ul>
-      </div>
-
-      <!-- Coluna 2: Serviços -->
-      <div>
-        <h4 style="color: var(--primary); margin-bottom: 20px; font-size: 1.2rem;">SERVIÇOS</h4>
-        <ul style="list-style: none; padding: 0;">
-          <li><a href="#servicos" style="color: #ccc; text-decoration: none; display: block; margin-bottom: 10px;">Troca de Tela</a></li>
-          <li><a href="#servicos" style="color: #ccc; text-decoration: none; display: block; margin-bottom: 10px;">Troca de Bateria</a></li>
-          <li><a href="#servicos" style="color: #ccc; text-decoration: none; display: block; margin-bottom: 10px;">Conserto de Placa</a></li>
-          <li><a href="#servicos" style="color: #ccc; text-decoration: none; display: block; margin-bottom: 10px;">Notebooks e Consoles</a></li>
-        </ul>
-      </div>
-
-      <!-- Coluna 3: Contato e Redes -->
-      <div>
-        <h4 style="color: var(--primary); margin-bottom: 20px; font-size: 1.2rem;">CONTATO</h4>
-        <ul style="list-style: none; padding: 0;">
-          <li style="margin-bottom: 10px;"><i class="fab fa-whatsapp" style="color: #25D366; margin-right: 8px;"></i> (18) 99624-1953</li>
-          <li style="margin-bottom: 10px;"><a href="https://wa.me/5518996241953" style="color: #ccc; text-decoration: none;">Chamar no WhatsApp</a></li>
-          <li style="margin-bottom: 10px;"><a href="https://instagram.com/hm.tech_piacatu" style="color: #ccc; text-decoration: none;"><i class="fab fa-instagram" style="margin-right: 8px;"></i> Instagram</a></li>
-          <!-- Adicione mais redes  -->
-        </ul>
-      </div>
-    </div>
-
-    <!-- Copyright no fundo centralizado -->
-    <div style="text-align: center; border-top: 1px solid #333; padding-top: 20px; font-size: 0.9rem;">
-      <p>Copyright © 2026 HM TECH - Assistência Técnica. Todos os direitos reservados.</p>
-      <p style="margin-top: 5px;">Piacatu e região | Atendimento rápido e com garantia</p>
-    </div>
-  </div>
-</footer>
 </body>
 </html>
