@@ -65,9 +65,57 @@
   <!-- ===== HERO ===== -->
   <section class="hero" id="home">
     <div class="container hero-content">
-      <div class="globo-wrapper">
-        <img src="images/globo-hmtech.png" alt="Globo HM TECH" class="globo-rotativo">
+
+      <!-- ===== CARROSSEL ===== -->
+<div class="carousel-wrapper">
+  <div class="carousel">
+    <div class="carousel-track" id="carouselTrack">
+
+      <!-- Slide 1 -->
+      <div class="carousel-slide active">
+        <img src="images/slide1.png" alt="Assistência Técnica Especializada - HM TECH">
+        <div class="slide-caption">
+          <span>🔧 Assistência Técnica Especializada</span>
+        </div>
       </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-slide">
+        <img src="images/slide2.png" alt="HM TECH - Buscamos e Levamos seu aparelho">
+        <div class="slide-caption">
+          <span>🛵 Buscamos e Levamos seu aparelho!</span>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-slide">
+        <img src="images/slide3.png" alt="Promoção de Carnaval - 5% de Desconto">
+        <div class="slide-caption">
+          <span>🎉 Promoção de Carnaval – 5% de Desconto!</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Botões de navegação -->
+    <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Slide anterior">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Próximo slide">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <!-- Dots (indicadores) -->
+    <div class="carousel-dots" id="carouselDots">
+      <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+      <button class="dot" data-index="1" aria-label="Slide 2"></button>
+      <button class="dot" data-index="2" aria-label="Slide 3"></button>
+    </div>
+  </div>
+</div>
+<!-- ===== FIM CARROSSEL ===== -->
+
+
       <h1>HM <span>TECH</span></h1>
       <p>
         📱 Seu celular quebrou? Nós resolvemos!<br>
@@ -231,7 +279,7 @@
         </ul>
       </div>
       <div class="about-img fade-in">
-        <img src="images/tecnico-hmteck.jpg" alt="Técnico HM TECH realizando reparo">
+        <img src="images/tecnico-hmteck.png" alt="Técnico HM TECH realizando reparo">
       </div>
     </div>
   </section>
@@ -292,7 +340,6 @@
             <li><a href="#servicos">Troca de Tela</a></li>
             <li><a href="#servicos">Troca de Bateria</a></li>
             <li><a href="#servicos">Conserto de Placa</a></li>
-            <li><a href="#servicos">Notebooks e Consoles</a></li>
           </ul>
         </div>
         <div class="footer-col">

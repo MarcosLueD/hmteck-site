@@ -206,3 +206,51 @@ document.getElementById('newsletter-form')?.addEventListener('submit', function 
     btn.disabled = false;
   }, 3000);
 });
+
+// ===== CARROSSEL =====
+(function () {
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots   = document.querySelectorAll('.dot');
+  const prev   = document.getElementById('carouselPrev');
+  const next   = document.getElementById('carouselNext');
+  let current  = 0;
+  let timer;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function autoPlay() {
+    timer = setInterval(() => goTo(current + 1), 4000);
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    autoPlay();
+  }
+
+  prev.addEventListener('click', () => { goTo(current - 1); resetTimer(); });
+  next.addEventListener('click', () => { goTo(current + 1); resetTimer(); });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      goTo(Number(dot.dataset.index));
+      resetTimer();
+    });
+  });
+
+  // Swipe touch
+  let touchStartX = 0;
+  const track = document.getElementById('carouselTrack');
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); resetTimer(); }
+  });
+
+  autoPlay();
+})();
