@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HM TECH - Assistência Técnica Especializada em celulares, notebooks e tablets. Atendimento rápido, peças originais e garantia em todos os serviços." />
+  <meta name="keywords" content="assistência técnica, conserto celular, troca de tela, troca bateria, notebook, HM TECH" />
+  <title>HM TECH — Assistência Técnica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ===== LOADER ===== -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">HM<span>TECH</span></div>
+    <div class="loader-bar"><div class="loader-progress"></div></div>
+  </div>
+</div>
+
+<!-- ===== MODAL DE LOGIN ===== -->
+<div id="loginModal" class="modal-overlay hidden">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeLoginModal()"><i class="fas fa-times"></i></button>
+    <div class="modal-logo">HM<span>TECH</span></div>
+    <h2 class="modal-title">Acesso Restrito</h2>
+    <p class="modal-subtitle">Painel Administrativo</p>
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label><i class="fas fa-user"></i> Usuário</label>
+        <input type="text" id="loginUser" placeholder="Digite seu usuário" required autocomplete="off" />
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-lock"></i> Senha</label>
+        <div class="input-eye">
+          <input type="password" id="loginPass" placeholder="Digite sua senha" required />
+          <button type="button" class="eye-btn" onclick="togglePass()"><i class="fas fa-eye" id="eyeIcon"></i></button>
+        </div>
+      </div>
+      <div id="loginError" class="login-error hidden"><i class="fas fa-exclamation-triangle"></i> Usuário ou senha incorretos.</div>
+      <button type="submit" class="btn-login" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Entrar no Painel</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <nav class="navbar container">
+    <div class="nav-logo" id="navLogo" title="HM TECH">
+      <span class="logo-hm">HM</span><span class="logo-tech">TECH</span>
+      <span class="logo-badge"><i class="fas fa-bolt"></i></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio" class="nav-link active">Início</a></li>
+      <li><a href="#servicos" class="nav-link">Serviços</a></li>
+      <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+      <li><a href="#orcamento" class="nav-link">Orçamento</a></li>
+      <li><a href="#contato" class="nav-link">Contato</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://wa.me/5518996241953" target="_blank" class="btn-whatsapp-nav"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== SEÇÃO HERO / CARROSSEL ===== -->
+<section id="inicio" class="hero-section">
+  <div class="carousel" id="carousel">
+    <div class="carousel-track" id="carouselTrack">
+      <!-- slides carregados via JS -->
+    </div>
+    <button class="carousel-btn prev" id="carouselPrev" aria-label="Slide anterior"><i class="fas fa-chevron-left"></i></button>
+    <button class="carousel-btn next" id="carouselNext" aria-label="Próximo slide"><i class="fas fa-chevron-right"></i></button>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</section>
+
+<!-- ===== BIO / CHAMADA PRINCIPAL ===== -->
+<section class="bio-section" id="bioSection">
+  <div class="container">
+    <div class="bio-grid">
+      <div class="bio-text" id="bioText">
+        <!-- carregado via JS -->
+      </div>
+      <div class="bio-badges">
+        <div class="bio-badge"><i class="fas fa-shield-halved"></i><span>Garantia <strong>6 meses</strong></span></div>
+        <div class="bio-badge"><i class="fas fa-clock"></i><span>Entrega <strong>no dia</strong></span></div>
+        <div class="bio-badge"><i class="fas fa-star"></i><span>Peças <strong>originais</strong></span></div>
+        <div class="bio-badge"><i class="fas fa-truck"></i><span>Busca e <strong>leva</strong></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVIÇOS ===== -->
+<section id="servicos" class="services-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag"><i class="fas fa-wrench"></i> O que fazemos</span>
+      <h2 class="section-title">Nossos <span>Serviços</span></h2>
+      <p class="section-subtitle">Reparos especializados com garantia e peças de qualidade</p>
+    </div>
+    <div class="services-grid" id="servicesGrid">
+      <!-- carregado via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== POR QUE ESCOLHER ===== -->
+<section class="why-section">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-image reveal">
+        <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=700&q=80" alt="Técnico HM TECH realizando reparo" loading="lazy" />
+        <div class="why-badge-float"><i class="fas fa-award"></i> Técnico Certificado</div>
+      </div>
+      <div class="why-content reveal">
+        <span class="section-tag"><i class="fas fa-thumbs-up"></i> Por que nos escolher</span>
+        <h2 class="section-title">Qualidade e <span>Confiança</span></h2>
+        <ul class="why-list">
+          <li><i class="fas fa-check-circle"></i> Experiência comprovada no mercado</li>
+          <li><i class="fas fa-check-circle"></i> Técnico certificado e especializado</li>
+          <li><i class="fas fa-check-circle"></i> Peças 100% originais ou de alta qualidade</li>
+          <li><i class="fas fa-check-circle"></i> Garantia de até 6 meses em serviços</li>
+          <li><i class="fas fa-check-circle"></i> Orçamentos sem compromisso e gratuitos</li>
+          <li><i class="fas fa-check-circle"></i> Atendimento rápido via WhatsApp</li>
+          <li><i class="fas fa-check-circle"></i> Preço justo e parcelamento no cartão</li>
+          <li><i class="fas fa-check-circle"></i> Serviço de busca e entrega à domicílio</li>
+        </ul>
+        <a href="#orcamento" class="btn-primary"><i class="fas fa-file-invoice"></i> Solicitar Orçamento</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ESTATÍSTICAS ===== -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <i class="fas fa-mobile-screen-button"></i>
+        <span class="stat-number" data-target="2500">0</span>
+        <span class="stat-label">Aparelhos Consertados</span>
+      </div>
+      <div class="stat-item reveal">
+        <i class="fas fa-users"></i>
+        <span class="stat-number" data-target="1800">0</span>
+        <span class="stat-label">Clientes Satisfeitos</span>
+      </div>
+      <div class="stat-item reveal">
+        <i class="fas fa-calendar-check"></i>
+        <span class="stat-number" data-target="5">0</span>
+        <span class="stat-label">Anos de Experiência</span>
+      </div>
+      <div class="stat-item reveal">
+        <i class="fas fa-star"></i>
+        <span class="stat-number" data-target="98">0</span>
+        <span class="stat-label">% Satisfação</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DEPOIMENTOS ===== -->
+<section id="depoimentos" class="testimonials-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag"><i class="fas fa-comments"></i> O que dizem</span>
+      <h2 class="section-title">Depoimentos dos <span>Clientes</span></h2>
+      <p class="section-subtitle">A satisfação dos nossos clientes é nossa maior recompensa</p>
+    </div>
+    <div class="testimonials-grid" id="testimonialsGrid">
+      <!-- carregado via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORMULÁRIO DE ORÇAMENTO ===== -->
+<section id="orcamento" class="quote-section">
+  <div class="container">
+    <div class="quote-grid">
+      <div class="quote-info reveal">
+        <span class="section-tag"><i class="fas fa-file-invoice-dollar"></i> Orçamento grátis</span>
+        <h2 class="section-title">Solicite seu <span>Orçamento</span></h2>
+        <p>Preencha o formulário e nosso técnico entrará em contato em minutos para te passar o melhor preço!</p>
+        <ul class="quote-features">
+          <li><i class="fas fa-check"></i> Orçamento 100% gratuito</li>
+          <li><i class="fas fa-check"></i> Resposta rápida via WhatsApp</li>
+          <li><i class="fas fa-check"></i> Sem compromisso de contratação</li>
+        </ul>
+        <div class="quote-wpp">
+          <a href="https://wa.me/5518996241953" target="_blank" class="btn-whatsapp-big"><i class="fab fa-whatsapp"></i> Chamar no WhatsApp</a>
+        </div>
+      </div>
+      <div class="quote-form-box reveal">
+        <form id="quoteForm" onsubmit="handleQuote(event)">
+          <h3><i class="fas fa-pen-to-square"></i> Formulário de Orçamento</h3>
+          <div class="form-group">
+            <label>Nome completo *</label>
+            <input type="text" id="qName" placeholder="Seu nome" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Telefone / WhatsApp *</label>
+              <input type="tel" id="qPhone" placeholder="(00) 00000-0000" required />
+            </div>
+            <div class="form-group">
+              <label>Aparelho *</label>
+              <input type="text" id="qDevice" placeholder="Ex: iPhone 13, Samsung A52" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Descreva o problema *</label>
+            <textarea id="qProblem" rows="4" placeholder="Descreva o problema com o máximo de detalhes possível..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-width" id="quoteSubmitBtn">
+            <i class="fas fa-paper-plane"></i> Enviar Solicitação
+          </button>
+          <div id="quoteSuccess" class="form-success hidden">
+            <i class="fas fa-circle-check"></i> Solicitação enviada com sucesso! Entraremos em contato em breve.
+          </div>
+          <div id="quoteError" class="form-error hidden">
+            <i class="fas fa-triangle-exclamation"></i> Erro ao enviar. Tente novamente.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTATO ===== -->
+<section id="contato" class="contact-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag"><i class="fas fa-location-dot"></i> Onde estamos</span>
+      <h2 class="section-title">Entre em <span>Contato</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+        <h4>WhatsApp</h4>
+        <p>(18) 99624-1953</p>
+        <a href="https://wa.me/5518996241953" target="_blank" class="btn-outline">Chamar agora</a>
+      </div>
+      <div class="contact-card reveal">
+        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+        <h4>Horário de Atendimento</h4>
+        <p>Seg – Sex: 08h às 18h<br>Sábado: 08h às 13h</p>
+      </div>
+      <div class="contact-card reveal">
+        <div class="contact-icon"><i class="fas fa-truck"></i></div>
+        <h4>Coleta e Entrega</h4>
+        <p>Buscamos e levamos seu aparelho em toda a região!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">HM<span>TECH</span></div>
+        <p>Assistência técnica especializada com qualidade, rapidez e garantia.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/5518996241953" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#servicos">Troca de Tela</a></li>
+          <li><a href="#servicos">Troca de Bateria</a></li>
+          <li><a href="#servicos">Conserto de Placa</a></li>
+           <li><a href="#servicos">Formatação</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#orcamento">Orçamento</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contato</h4>
+        <p><i class="fab fa-whatsapp"></i> (18) 99624-1953</p>
+        <p><i class="fas fa-clock"></i> Seg–Sex 08h–18h | Sáb 08h–13h</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footerYear"></span> HM TECH — Todos os direitos reservados.</p>
+      <p>Desenvolvido</i> pelo LUED</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== BOTÃO WHATSAPP FLUTUANTE ===== -->
+<a href="https://wa.me/5518996241953?text=Olá! Gostaria de um orçamento" target="_blank" class="wpp-float" aria-label="Contato WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span class="wpp-pulse"></span>
+</a>
+
+<!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+<button id="backToTop" class="back-top" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
